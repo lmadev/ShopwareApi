@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\Service\LmaDev\ShopwareApi;
+namespace LmaDev\ShopwareApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Class ShopwareApi
- * @package App\Service\LmaDev\ShopwareApi
+ * @package LmaDev\ShopwareApi
  * @author LmaDev
  * @version 1.0.0
  */

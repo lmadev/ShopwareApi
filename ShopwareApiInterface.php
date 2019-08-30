@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Service\LmaDev\ShopwareApi;
+namespace LmaDev\ShopwareApi;
 
 /**
  * Interface ShopwareApiInterface
- * @package App\Service\LmaDev\ShopwareApi
+ * @package LmaDev\ShopwareApi
  * @author LmaDev
  * @version 1.0.0
  */

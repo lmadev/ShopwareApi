@@ -23,7 +23,7 @@ parameters:
     lma_dev.shopware_api.shop_url: https://example.dev/api
 services:
     # default configuration for services in *this* file
-    App\Service\LmaDev\ShopwareApi\ConnectionApi:
+    LmaDev\ShopwareApi\ConnectionApi:
             bind:
                 string $baseUri: '%lma_dev.shopware_api.shop_uri%'
                 string $user: '%lma_dev.shopware_api.user%'
