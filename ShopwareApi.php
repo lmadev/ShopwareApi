@@ -5,7 +5,6 @@ namespace App\Service\LmaDev\ShopwareApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**
  * Class ShopwareApi
@@ -21,20 +20,12 @@ class ShopwareApi  implements ShopwareApiInterface
     private $api;
 
     /**
-     * @var ParameterBagInterface
-     */
-    private $params;
-
-
-    /**
      * ShopwareApi constructor.
      * @param ConnectionApi $api
-     * @param ParameterBagInterface $params
      */
-    public function __construct(ConnectionApi $api, ParameterBagInterface $params)
+    public function __construct(ConnectionApi $api)
     {
         $this->api = $api;
-        $this->params = $params;
     }
 
     /**
