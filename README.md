@@ -1,7 +1,7 @@
 # SYMFONY SHOPWARE CONNECTION API BUNDLE
 
 
-This Symfony Service allows connection to the Shopware 5.x platform
+Vendor library for connection with Api Shopware 5.x platform.
 
 
 ## Requirements
