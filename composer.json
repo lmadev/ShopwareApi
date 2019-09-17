@@ -2,7 +2,7 @@
     "name": "lmadev/shopware-api",
     "description": "Vendor library for connection with Api Shopware.",
     "type": "library",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "require": {
         "php": ">=7.1.3",
         "guzzlehttp/guzzle": "~6.0"

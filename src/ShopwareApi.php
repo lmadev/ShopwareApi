@@ -10,7 +10,7 @@ use GuzzleHttp\Exception\GuzzleException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 1.0.0
+ * @version 2.1.1
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
