@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\RequestException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.3
+ * @version 2.1.4
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
@@ -64,7 +64,7 @@ class ShopwareApi  implements ShopwareApiInterface
         }catch (RequestException $e){
             return [
                 'success' => false,
-                'messgae' => $e->getMessage(),
+                'message' => $e->getMessage(),
                 'code' => $e->getCode()
             ];
         }
@@ -87,7 +87,7 @@ class ShopwareApi  implements ShopwareApiInterface
         }catch (RequestException $e){
             return [
                 'success' => false,
-                'messgae' => $e->getMessage(),
+                'message' => $e->getMessage(),
                 'code' => $e->getCode()
             ];
         }
@@ -111,7 +111,7 @@ class ShopwareApi  implements ShopwareApiInterface
         }catch (RequestException $e){
             return [
                 'success' => false,
-                'messgae' => $e->getMessage(),
+                'message' => $e->getMessage(),
                 'code' => $e->getCode()
             ];
         }
@@ -134,7 +134,7 @@ class ShopwareApi  implements ShopwareApiInterface
         }catch (RequestException $e){
             return [
                 'success' => false,
-                'messgae' => $e->getMessage(),
+                'message' => $e->getMessage(),
                 'code' => $e->getCode()
             ];
         }
@@ -154,7 +154,7 @@ class ShopwareApi  implements ShopwareApiInterface
         }catch (RequestException $e){
             return [
                 'success' => false,
-                'messgae' => $e->getMessage(),
+                'message' => $e->getMessage(),
                 'code' => $e->getCode()
             ];
         }
