@@ -5,6 +5,7 @@ namespace LmaDev\ShopwareApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * Class ShopwareApi
@@ -58,8 +59,15 @@ class ShopwareApi  implements ShopwareApiInterface
         /**
          * @var Client
          */
-        $response = $this->api->call()->request('GET', $action . '/?' . $params);
-
+        try{
+            $response = $this->api->call()->request('GET', $action . '/?' . $params);
+        }catch (RequestException $e){
+            return [
+                'success' => false,
+                'messgae' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
+        }
         return \GuzzleHttp\json_decode($response->getBody());
     }
 
@@ -74,7 +82,15 @@ class ShopwareApi  implements ShopwareApiInterface
         /**
          * @var Client
          */
-        $response = $this->api->call()->post($action, ['json' => $data]);
+        try{
+            $response = $this->api->call()->post($action, ['json' => $data]);
+        }catch (RequestException $e){
+            return [
+                'success' => false,
+                'messgae' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
+        }
 
         return \GuzzleHttp\json_decode($response->getBody());
     }
@@ -90,7 +106,15 @@ class ShopwareApi  implements ShopwareApiInterface
         /**
          * @var Client
          */
-        $response = $this->api->call()->put($action . '/' . $productID, ['json' => $data]);
+        try{
+            $response = $this->api->call()->put($action . '/' . $productID, ['json' => $data]);
+        }catch (RequestException $e){
+            return [
+                'success' => false,
+                'messgae' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
+        }
 
         return \GuzzleHttp\json_decode($response->getBody());
     }
@@ -105,7 +129,35 @@ class ShopwareApi  implements ShopwareApiInterface
         /**
          * @var Client
          */
-        $response = $this->api->call()->delete($action . '/' . $productID);
+        try {
+            $response = $this->api->call()->delete($action . '/' . $productID);
+        }catch (RequestException $e){
+            return [
+                'success' => false,
+                'messgae' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
+        }
         return \GuzzleHttp\json_decode($response->getBody());
+    }
+
+    /**
+     * @return array
+     */
+    public function testConnection()
+    {
+        /**
+         * @var Client
+         */
+        try{
+            $response = $this->api->call()->request('GET', '');
+        }catch (RequestException $e){
+            return [
+                'success' => false,
+                'messgae' => $e->getMessage(),
+                'code' => $e->getCode()
+            ];
+        }
+        return $response->getStatusCode();
     }
 }
