@@ -7,7 +7,7 @@ namespace LmaDev\ShopwareApi;
  * Interface ShopwareApiInterface
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.1
+ * @version 2.1.2
  */
 interface ShopwareApiInterface
 {

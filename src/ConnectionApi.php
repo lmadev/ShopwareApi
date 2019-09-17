@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\RequestException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1..
+ * @version 2.1.2
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
@@ -141,6 +141,9 @@ class ShopwareApi  implements ShopwareApiInterface
         return \GuzzleHttp\json_decode($response->getBody());
     }
 
+    /**
+     * @return array
+     */
     public function testConnection()
     {
         /**
@@ -154,8 +157,6 @@ class ShopwareApi  implements ShopwareApiInterface
                 'messgae' => $e->getMessage(),
                 'code' => $e->getCode()
             ];
-        } catch (GuzzleException $e) {
-            dd($e);
         }
         return $response->getStatusCode();
     }
