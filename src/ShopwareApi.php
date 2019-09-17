@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\RequestException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.2
+ * @version 2.1.3
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
