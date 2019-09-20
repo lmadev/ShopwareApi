@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\RequestException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.4
+ * @version 2.1.5
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
@@ -150,7 +150,7 @@ class ShopwareApi  implements ShopwareApiInterface
          * @var Client
          */
         try{
-            $response = $this->api->call()->request('GET', '');
+            $response = $this->api->call()->request('GET', 'version');
         }catch (RequestException $e){
             return [
                 'success' => false,
@@ -158,6 +158,10 @@ class ShopwareApi  implements ShopwareApiInterface
                 'code' => $e->getCode()
             ];
         }
-        return $response->getStatusCode();
+        return [
+            'success' => true,
+            'message' => $response->getBody(),
+            'code' => $response->getStatusCode()
+        ];
     }
 }
