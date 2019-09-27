@@ -7,7 +7,7 @@ namespace LmaDev\ShopwareApi;
  * Interface ShopwareApiInterface
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.3
+ * @version 2.1.4
  */
 interface ShopwareApiInterface
 {
@@ -18,7 +18,7 @@ interface ShopwareApiInterface
      * @param array $limit
      * @return mixed
      */
-    public function get(String $action, array $params = null , array $sort = null, array $limit = null);
+    public function get(String $action, array $params = null , array $sort = null, int $limit = null);
 
     /**
      * @param String $action

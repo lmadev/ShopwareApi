@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\RequestException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.6
+ * @version 2.1.7
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
@@ -33,12 +33,12 @@ class ShopwareApi  implements ShopwareApiInterface
      * @param String $action
      * @param array|null $filter
      * @param array|null $sort
-     * @param array|null $limit
+     * @param int|null $limit
      * @return mixed
      * @throws GuzzleException
      * @example [['property'=>'active','value'=>1],['property'=>'name','value'=>'%klakier%']]
      */
-    public function get(String $action, array $filter = null , array $sort = null, array $limit = null)
+    public function get(String $action, array $filter = null , array $sort = null, int $limit = null)
     {
         /**
          * @var string
