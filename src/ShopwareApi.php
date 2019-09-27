@@ -11,7 +11,7 @@ use GuzzleHttp\Exception\RequestException;
  * Class ShopwareApi
  * @package LmaDev\ShopwareApi
  * @author LmaDev
- * @version 2.1.5
+ * @version 2.1.6
  */
 class ShopwareApi  implements ShopwareApiInterface
 {
@@ -49,11 +49,20 @@ class ShopwareApi  implements ShopwareApiInterface
         }
 
         if (null !== $sort && is_array($sort)) {
-            $params .= http_build_query(['sort' => $sort]);
+            if($params == "") {
+                $params .= http_build_query(['sort' => $sort]);
+            }else{
+                $params .= "&".http_build_query(['sort' => $sort]);
+            }
+
         }
 
-        if (null !== $limit && is_array($limit)) {
-            $params .= http_build_query($limit);
+        if (null !== $limit) {
+            if($params == "") {
+                $params .= http_build_query(['limit' => $limit]);
+            }else{
+                $params .= "&".http_build_query(['limit' => $limit]);
+            }
         }
 
         /**
